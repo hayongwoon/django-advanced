@@ -24,7 +24,8 @@ api = NinjaAPI()
 def add(request, a: int, b: int):
     return {"result": a + b}
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", api.urls), #urls 안에 @api.get에 있는 view function을 모두 등록한다는 의미
+    path("api/", api.urls),  # urls 안에 @api.get에 있는 view function을 모두 등록한다는 의미
 ]
