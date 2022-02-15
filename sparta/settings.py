@@ -34,6 +34,7 @@ ALLOWED_HOSTS: List[str] = []
 # Application definition
 
 INSTALLED_APPS = [
+    "tabom.apps.TabomConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -86,7 +87,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "sparta",
         "USER": "root",
-        "PASSWORD": "1209",
+        "PASSWORD": "****",
+        # git ignore 한 local_settings 파일로 비밀번호 암호화를 깃허브에 올려 보안을 유지한다. 아래 try 문을 통해 databases를 덮어쓴다.
         "HOST": "localhost",
         "PORT": "3306",
     }
@@ -133,3 +135,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+try:
+    from sparta.local_settings import *
+except ImportError:
+    pass
