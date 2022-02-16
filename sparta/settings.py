@@ -88,7 +88,6 @@ DATABASES = {
         "NAME": "sparta",
         "USER": "root",
         "PASSWORD": "****",
-        # git ignore 한 local_settings 파일로 비밀번호 암호화를 깃허브에 올려 보안을 유지한다. 아래 try 문을 통해 databases를 덮어쓴다.
         "HOST": "localhost",
         "PORT": "3306",
     }
